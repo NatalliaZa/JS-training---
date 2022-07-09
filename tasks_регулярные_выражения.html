@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit: 12/09/2002. Mollitia velit exercitationem quo?
+         Odit aliquam molestiae aspernatur eius ex, laborum nisi iusto, delectus sed consequuntur voluptatum fugiat: 04/06/1977 neque vero blanditiis et.</p>
+    <script>
+    /* 1. Дана строка символов. Вывести в консоль эту строку, затем заменить в ней все цифры на пробелы и вывести в консоль новую строку: */
+
+    let str1 = 'dfghdkfgb889 dksfjdsvgj5556 7775576';
+    console.log(str1);
+
+    str1 = str1.replace(/\d/gi, ' '); //если убрать g то заменить только первую двойку
+    console.log(str1); 
+
+    /* 2 . Дана строка символов. Вывести в консоль эту строку, затем заменить в ней все цифры 1,2 или 3 на букву ‘A’,
+	а цифры 4,5 или 6 на букву ‘B’ и вывести результат: */
+
+    let str2 = 'dfghdkfgb889 dksfjdsvgj552356 7277512736';
+    console.log(str2);
+   
+
+    str2 = str2.replace(/[123]/gi, 'A');
+    console.log(str2); 
+    
+    str2 = str2.replace(/[456]/gi, 'B');
+    console.log(str2); 
+
+
+    /* 3  Дана строка символов. С помощью регулярных выражений найти в ней и напечатать все гласные буквы латинского алфавита: */
+
+    let str3 = 'dfghdakfiiigxsb889 dksfjdseeeevgj552356 7277ooooo512736';
+    console.log(str3);
+
+
+
+    //первый способ:
+    //удаляю цифры и удаляю согласные 
+        
+
+   str3 = str3.replace(/\d/gi, ' '); 
+    console.log(str3);
+
+    str3 = str3.replace(/[bcdfghjklmnpqrstvwxyz]/gi, '');
+    console.log(str3); 
+
+
+    // второй способ
+    str3 = str3.match(/[aeiou]/gi).join('');
+    console.log(str3); 
+
+    /* 4. Разместить на странице параграф с произвольным текстом. Машина должна найти в нем и напечатать все даты, соответствующие шаблону: DD/MM/YYYY:  */
+
+    let el = document.querySelector('p');
+    let str4 = el.textContent;
+    console.log(str4.match(/\d+\/\d+\/\d+/g)); 
+
+
+    
+
+    
+    
+     
+    </script>
+</body>
+</html>
